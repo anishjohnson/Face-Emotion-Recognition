@@ -68,7 +68,7 @@ netifaces==0.11.0
 notebook==6.4.11
 numpy==1.22.4
 oauthlib==3.2.0
-# opencv-python==4.5.5.64
+opencv-python==4.5.5.64
 opencv-python-headless==4.5.5.64
 opt-einsum==3.3.0
 packaging==21.3
