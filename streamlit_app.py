@@ -49,9 +49,11 @@ class Faceemotion(VideoTransformerBase):
         return img
 
 def main():
-    # Face Analysis Application #
+    # Designing webpage layout. 
     st.title("Real Time Face Emotion Detection Application")
-    activiteis = ["Home", "Webcam Face Detection", "About"]
+
+    activiteis = ["Home", "Face Emotion Detection", "About"]
+
     choice = st.sidebar.selectbox("Select Activity", activiteis)
     st.sidebar.markdown(
         """ Developed by Anish Johnson   
@@ -85,12 +87,19 @@ def main():
         st.markdown(html_temp_about1, unsafe_allow_html=True)
 
         html_temp4 = """
-                             		<div style="background-color:#98AFC7;padding:10px">
-                             		<h4 style="color:white;text-align:center;">This Application is developed by Mohammad Anish Johnson using Streamlit Framework, Opencv, Tensorflow and Keras library for demonstration purpose. If you're on LinkedIn and want to connect, just click on the link in sidebar and shoot me a request. If you have any suggestion or wnat to comment just write a mail at anishjohnson05@gmail.com. </h4>
-                             		<h4 style="color:white;text-align:center;">Thanks for Visiting</h4>
-                             		</div>
-                             		<br></br>
-                             		<br></br>"""
+                    <div style="background-color:#98AFC7;padding:10px">
+
+                    <h4 style="color:white;text-align:center;">
+                    This Application is developed by Anish Johnson using Streamlit Framework, 
+                    Opencv, Tensorflow and Keras library for demonstration purpose. 
+                    If you have any suggestion or wnat to comment just write a mail at anishjohnson05@gmail.com.
+                    </h4>
+
+                    <h4 style="color:white;text-align:center;">Thanks for Visiting</h4>
+                    </div>
+                    <br></br>
+                    <br></br>
+                    """
 
         st.markdown(html_temp4, unsafe_allow_html=True)
 
