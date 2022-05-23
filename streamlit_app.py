@@ -13,6 +13,9 @@ emotion_labels = ['Angry','Disgust','Fear','Happy','Neutral', 'Sad', 'Surprise']
 # Load model.
 classifier =load_model('model_78.h5')
 
+# load weights into new model
+classifier.load_weights("custom_model_result.h5")
+
 # Load face using OpenCV
 try:
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
