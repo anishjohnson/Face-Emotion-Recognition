@@ -59,21 +59,29 @@ def main():
     if choice == "Home":
         html_temp_home1 = """<div style="background-color:#FC4C02;padding:0.5px">
                              <h4 style="color:white;text-align:center;">
-                             Face Emotion detection application using OpenCV, Custom CNN model and Streamlit.
+                            Start Your Real Time Face Emotion Detection.
                              </h4>
                              </div>
                              </br>"""
 
         st.markdown(html_temp_home1, unsafe_allow_html=True)
         st.write("""
-                 The application has two functionalities.
-                 1. Real time face detection using web cam feed.
-                 2. Real time face emotion recognization.
+        * An average human spends about 10 to 15hrs a day staring at a computer screen, during which our facial expressions keep on changing. 
+        * Sometimes we laugh, sometimes we cry, sometimes we get angry, and sometimes get scared by our face when the camera turns on accidentally.
+        * But ever wondered; whether the computer that we give all this attention to is even capable of recognizing these emotions?
+        
+        Let's find out...
+        1. Click the dropdown list in the top left corner and select Live Face Emotion Detection.
+        2. This takes you to a page which will tell if it recognizes your emotions.
                  """)
 
     # Live Face Emotion Detection.
     elif choice == "Live Face Emotion Detection":
         st.header("Webcam Live Feed")
+        st.subheader('''
+        Welcome to the other side of the SCREEN!!!
+        * Get ready with all the emotions you can express. 
+        ''')
         st.write("1. Click Start to open your camera and give permission for prediction")
         st.write("2. This will predict your emotion.")
         st.write("3. When you done, click stop to end.")
@@ -82,11 +90,15 @@ def main():
     # About.
     elif choice == "About":
         st.subheader("About this app")
-        html_temp_about1= """<div style="background-color:#6D7B8D;padding:10px">
-                                    <h4 style="color:white;text-align:center;">
-                                    Real time face emotion detection application using OpenCV, Custom Trained CNN model and Streamlit.</h4>
+        html_temp_about1= """<div style="background-color:#36454F;padding:30px">
+                                    <h4 style="color:white;">
+                                     This app predicts facial emotion using a Convolutional neural network.
+                                     Which is built using Keras and Tensorflow libraries.
+                                     Face detection is achived through openCV.
+                                    </h4>
                                     </div>
-                                    </br>"""
+                                    </br>
+                                    """
         st.markdown(html_temp_about1, unsafe_allow_html=True)
 
 
