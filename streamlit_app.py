@@ -14,7 +14,7 @@ emotion_labels = ['Angry','Disgust','Fear','Happy','Neutral', 'Sad', 'Surprise']
 classifier =load_model('model_78.h5')
 
 # load weights into new model
-classifier.load_weights("custom_model_result.h5")
+classifier.load_weights("model_weights_78.h5")
 
 # Load face using OpenCV
 try:
