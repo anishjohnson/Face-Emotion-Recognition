@@ -4,8 +4,7 @@ import cv2
 import streamlit as st
 from tensorflow import keras
 from keras.models import load_model
-from keras.models import model_from_json
-from keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import img_to_array
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, RTCConfiguration, VideoProcessorBase, WebRtcMode
 
 # Load the model that we saved in h5 format.
