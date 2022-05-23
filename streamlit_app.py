@@ -51,8 +51,7 @@ def main():
     activiteis = ["Home", "Live Face Emotion Detection", "About"]
     choice = st.sidebar.selectbox("Select Activity", activiteis)
     st.sidebar.markdown(
-        """ Developed by Anish Johnson    
-            [Mail](anishjohnson05@gmail.com),
+        """ Developed by Anish Johnson
             [LinkedIn](https://www.linkedin.com/in/anish-johnson-594110208/)""")
 
     # Homepage.
