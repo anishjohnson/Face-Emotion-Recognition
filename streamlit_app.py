@@ -14,7 +14,7 @@ classifier =load_model('model_78.h5')
 
 #load face
 try:
-    face_cascade = cv2.CascadeClassifier('cv2.data.haarcascades + "haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 except Exception:
     st.write("Error loading cascade classifiers")
 
