@@ -1,3 +1,4 @@
+# import the rquired libraries.
 import numpy as np
 import cv2
 from keras.models import load_model
@@ -6,15 +7,15 @@ from tensorflow import keras
 from tensorflow.keras.preprocessing.image import img_to_array
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, RTCConfiguration, VideoProcessorBase, WebRtcMode
 
-# load model
+# Define the emotions.
 emotion_labels = ['Angry','Disgust','Fear','Happy','Neutral', 'Sad', 'Surprise']
 
-# load weights into new model
+# Load model.
 classifier =load_model('model_78.h5')
 
-#load face
+# Load face using OpenCV
 try:
-    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 except Exception:
     st.write("Error loading cascade classifiers")
 
@@ -28,7 +29,7 @@ class VideoTransformer(VideoTransformerBase):
             image=img_gray, scaleFactor=1.3, minNeighbors=5)
         for (x, y, w, h) in faces:
             cv2.rectangle(img=img, pt1=(x, y), pt2=(
-                x + w, y + h), color=(255, 0, 0), thickness=2)
+                x + w, y + h), color=(0, 255, 255), thickness=2)
             roi_gray = img_gray[y:y + h, x:x + w]
             roi_gray = cv2.resize(roi_gray, (48, 48), interpolation=cv2.INTER_AREA)
             if np.sum([roi_gray]) != 0:
@@ -39,37 +40,46 @@ class VideoTransformer(VideoTransformerBase):
                 maxindex = int(np.argmax(prediction))
                 finalout = emotion_labels[maxindex]
                 output = str(finalout)
-            label_position = (x, y)
+            label_position = (x, y-10)
             cv2.putText(img, output, label_position, cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
         return img
 
 def main():
     # Face Analysis Application #
-    st.title("Real Time Face Emotion Detection Application")
-    activiteis = ["Home", "Webcam Face Detection", "About"]
+    st.title("Real Time Face Emotion Detection Application 😠🤮😨😀😐😔😮")
+    activiteis = ["Home", "Live Face Emotion Detection", "About"]
     choice = st.sidebar.selectbox("Select Activity", activiteis)
     st.sidebar.markdown(
         """ Developed by Anish Johnson    
-            [Mail](anishjohnson05@gmail.com)  
+            [Mail](anishjohnson05@gmail.com),
             [LinkedIn](https://www.linkedin.com/in/anish-johnson-594110208/)""")
+
+    # Homepage.
     if choice == "Home":
-        html_temp_home1 = """<div style="background-color:#6D7B8D;padding:10px">
-                                            <h4 style="color:white;text-align:center;">
-                                            Face Emotion detection application using OpenCV, Custom CNN model and Streamlit.</h4>
-                                            </div>
-                                            </br>"""
+        html_temp_home1 = """<div style="background-color:#FC4C02;padding:0.5px">
+                             <h4 style="color:white;text-align:center;">
+                             Face Emotion detection application using OpenCV, Custom CNN model and Streamlit.
+                             </h4>
+                             </div>
+                             </br>"""
+
         st.markdown(html_temp_home1, unsafe_allow_html=True)
         st.write("""
                  The application has two functionalities.
                  1. Real time face detection using web cam feed.
                  2. Real time face emotion recognization.
                  """)
-    elif choice == "Webcam Face Detection":
+
+    # Live Face Emotion Detection.
+    elif choice == "Live Face Emotion Detection":
         st.header("Webcam Live Feed")
-        st.write("Click on start to use webcam and detect your face emotion")
+        st.write("1. Click Start to open your camera and give permission for prediction")
+        st.write("2. This will predict your emotion.")
+        st.write("3. When you done, click stop to end.")
         webrtc_streamer(key="example", video_transformer_factory=VideoTransformer)
 
+    # About.
     elif choice == "About":
         st.subheader("About this app")
         html_temp_about1= """<div style="background-color:#6D7B8D;padding:10px">
@@ -79,15 +89,6 @@ def main():
                                     </br>"""
         st.markdown(html_temp_about1, unsafe_allow_html=True)
 
-        html_temp4 = """
-                             		<div style="background-color:#98AFC7;padding:10px">
-                             		<h4 style="color:white;text-align:center;">This Application is developed by Anish Johnson using Streamlit Framework, Opencv, Tensorflow and Keras library for demonstration purpose. If you're on LinkedIn and want to connect, just click on the link in sidebar and shoot me a request. If you have any suggestion or wnat to comment just write a mail at anishjohnson05@gmail.com. </h4>
-                             		<h4 style="color:white;text-align:center;">Thanks for Visiting</h4>
-                             		</div>
-                             		<br></br>
-                             		<br></br>"""
-
-        st.markdown(html_temp4, unsafe_allow_html=True)
 
     else:
         pass
