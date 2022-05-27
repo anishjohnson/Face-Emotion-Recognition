@@ -23,11 +23,11 @@ The data consists of 48x48 pixel grayscale images of faces. The faces have been 
 
 ## Dependencies:<br>
 <p> Install these libraries before running the colab notebook.</p>
-* numpy
-* streamlit==1.9.0
-* tensorflow-cpu==2.9.0
-* opencv-python-headless==4.5.5.64
-* streamlit-webrtc==0.37.0
+1. numpy<br>
+2. streamlit==1.9.0<br>
+3. tensorflow-cpu==2.9.0<br>
+4. opencv-python-headless==4.5.5.64<br>
+5. streamlit-webrtc==0.37.0<br>
 
 ## Project Overview:<br>
 <p>We start with downloading the required dataset from Kaggle. Once the data is available, the training and validation sets are defined.</p>
@@ -39,10 +39,10 @@ The data consists of 48x48 pixel grayscale images of faces. The faces have been 
 <p>Once the model was ready, we trained it using the prepared data.</p>
 
 <p>The model achieved an accuracy of 77% on the training set and 64% on the validation set after fifteen epochs.</p>
-![image](Images Used\loss & accuracy.png)
+<img src='https://github.com/anishjohnson/Face-Emotion-Recognition/blob/main/Images%20Used/loss%20%26%20accuracy.png'>
 
 <p>From the confusion matrix, we saw; that the model accurately predicts most classes, but the performance is comparatively lower in classes angry and fear. Less amount of data present for these classes might be the reason for this.</p>
-![image](Images Used\confusion matrix.png)
+<img src='https://github.com/anishjohnson/Face-Emotion-Recognition/blob/main/Images%20Used/confusion%20matrix.png'>
 
 <p>Finally, using an image passed through our model, we confirmed that it could correctly recognize the emotions.</p>
 
@@ -51,7 +51,7 @@ The data consists of 48x48 pixel grayscale images of faces. The faces have been 
 The link for the web app: https://share.streamlit.io/anishjohnson/face-emotion-recognition/main
 
 ## Live Facial Emotion Recognition:
-![image](Images Used\face_detect.png)
+<img src='https://github.com/anishjohnson/Face-Emotion-Recognition/blob/main/Images%20Used/face_detect.png'>
 
 ## For reference:<br>
 * https://towardsdatascience.com/face-detection-recognition-and-emotion-detection-in-8-lines-of-code-b2ce32d4d5de
