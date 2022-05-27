@@ -53,6 +53,11 @@ The link for the web app: https://share.streamlit.io/anishjohnson/face-emotion-r
 ## Live Facial Emotion Recognition:
 <img src='https://github.com/anishjohnson/Face-Emotion-Recognition/blob/main/Images%20Used/face_detect.png'>
 
+## Demo video to display the working of our web app deployed on streamlit.
+
+https://user-images.githubusercontent.com/87002524/170706372-9cadcd73-2f1e-41d2-b61a-d9b8042cbd95.mp4
+
+
 ## For reference:<br>
 * https://towardsdatascience.com/face-detection-recognition-and-emotion-detection-in-8-lines-of-code-b2ce32d4d5de
 * https://towardsdatascience.com/video-facial-expression-detection-with-deep-learning-applying-fast-ai-d9dcfd5bcf10
