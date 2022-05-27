@@ -7,26 +7,12 @@ This project is a part of "Deep Learning + ML Engineering” curriculum as capst
 
 
 ## Project Introduction:<br>
-<p>The Indian education landscape has been undergoing rapid changes for the past 10 years owing to
-the advancement of web-based learning services, specifically, eLearning platforms.</p>
+<p>The Indian education landscape has been undergoing rapid changes for the past ten years owing to the advancement of web-based learning services, specifically eLearning platforms.</p>
 
-<p>Global E-learning is estimated to witness an 8X over the next 5 years to reach USD 2B in 2021. India
-is expected to grow with a CAGR of 44% crossing the 10M users mark in 2021. Although the market
-is growing on a rapid scale, there are major challenges associated with digital learning when
-compared with brick and mortar classrooms. One of many challenges is how to ensure quality
-learning for students. Digital platforms might overpower physical classrooms in terms of content
-quality but when it comes to understanding whether students are able to grasp the content in a live
-class scenario is yet an open-end challenge.</p>
+<p>Digital platforms might overpower physical classrooms in terms of content quality, but in a physical classroom, a teacher can see the faces and assess the emotion of the class and tune their lecture accordingly, whether he is going fast or slow. He can identify students who need special attention.
+While digital platforms have limitations in terms of physical surveillance, it comes with the power of data and machines, which can work for you.</p>
 
-<p>In a physical classroom during a lecturing teacher can see the faces and assess the emotion of the
-class and tune their lecture accordingly, whether he is going fast or slow. He can identify students who
-need special attention. Digital classrooms are conducted via video telephony software program (exZoom) where it’s not possible for medium scale class (25-50) to see all students and access the
-mood. Because of this drawback, students are not focusing on content due to lack of surveillance.
-While digital platforms have limitations in terms of physical surveillance but it comes with the power of
-data and machines which can work for you. It provides data in the form of video, audio, and texts
-which can be analysed using deep learning algorithms. Deep learning backed system not only solves
-the surveillance issue, but it also removes the human bias from the system, and all information is no
-longer in the teacher’s brain rather translated in numbers that can be analysed and tracked.</p>
+<p>It provides data in form of video, audio, and texts, which can be analyzed using deep learning algorithms. A deep learning-backed system not only solves the surveillance issue, but also removes the human bias from the system, and all information is no longer in the teacher’s brain but rather translated into numbers that can be analyzed and tracked.</p>
 
 ## Objective:<br>
 Our objective is to solve the above mentioned challenge by applying deep learning algorithms to live video data inorder to recognize the facial emotions and categorize them accordingly.
@@ -35,14 +21,37 @@ Our objective is to solve the above mentioned challenge by applying deep learnin
 We have utilized the [FER 2013](https://www.kaggle.com/datasets/msambare/fer2013) dataset provided on Kaggle.<br>
 The data consists of 48x48 pixel grayscale images of faces. The faces have been automatically registered so that the face is more or less centred and occupies about the same amount of space in each image.<br>
 
-The task is to categorize each face based on the emotion shown in the facial expression into one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral). The training set consists of 28,709 examples and the public test set consists of 3,589 examples.
+## Dependencies:<br>
+<p> Install these libraries before running the colab notebook.</p>
+* numpy
+* streamlit==1.9.0
+* tensorflow-cpu==2.9.0
+* opencv-python-headless==4.5.5.64
+* streamlit-webrtc==0.37.0
 
 ## Project Overview:<br>
-.
-.
-.
-.
-.
+<p>We start with downloading the required dataset from Kaggle. Once the data is available, the training and validation sets are defined.</p>
+
+<p>The next step is to preprocess the datasets; this includes rescaling the data by multiplying it by 1/255 to obtain the target values in the range [0,1] and performing data augmentation for artificially creating new data. Data augmentation also helps to increase the size and introduce variability in the dataset.</p>
+
+<p>After preparing the data, we construct the required CNN model using TensorFlow and Keras libraries to recognize the facial emotions of a user. This model consists of four convolutional layers and three fully connected layers to process the input image data and predict the required output. In between each layer, a Max Pooling and Dropout layer was added for downsampling the data and preventing our model from overfitting. Finally, for compiling all the layers, we have used the Adam optimizer, with loss function as Categorical Cross entropy and accuracy as the metric for evaluation.</p>
+
+<p>Once the model was ready, we trained it using the prepared data.</p>
+
+<p>The model achieved an accuracy of 77% on the training set and 64% on the validation set after fifteen epochs.</p>
+![image](Images Used\loss & accuracy.png)
+
+<p>From the confusion matrix, we saw; that the model accurately predicts most classes, but the performance is comparatively lower in classes angry and fear. Less amount of data present for these classes might be the reason for this.</p>
+![image](Images Used\confusion matrix.png)
+
+<p>Finally, using an image passed through our model, we confirmed that it could correctly recognize the emotions.</p>
+
+<p>Additionally, using OpenCV and Streamlit, we created a web app to monitor live facial emotion recognition. The web app successfully identified each class and also was able to detect multiple faces and their respective emotions.</p>
+
+The link for the web app: https://share.streamlit.io/anishjohnson/face-emotion-recognition/main
+
+## Live Facial Emotion Recognition:
+![image](Images Used\face_detect.png)
 
 ## For reference:<br>
 * https://towardsdatascience.com/face-detection-recognition-and-emotion-detection-in-8-lines-of-code-b2ce32d4d5de
