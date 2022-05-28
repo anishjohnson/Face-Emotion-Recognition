@@ -3,7 +3,13 @@
 <img src="https://github.com/anishjohnson/Face-Emotion-Recognition/blob/main/Images%20Used/github_cover_croped.jpg">
 </p>
 
-This project is a part of "Deep Learning + ML Engineering” curriculum as capstone projects at [Almabetter School.](https://www.almabetter.com/)
+This project is a part of "Deep Learning + ML Engineering” curriculum as capstone projects at [Almabetter School.](https://www.almabetter.com/)<br>
+
+## The required files can be accessed through the below likns directly:
+* [Colab Notebook](https://github.com/anishjohnson/Face-Emotion-Recognition/blob/f2e1968ebdf82ddccb5e42168d1fb48de44f9b1c/FER/Colab%20Notebook/Face_Emotion_Recognition_Anish_Johnson.ipynb)
+* [Streamlit App (.py) File](https://github.com/anishjohnson/Face-Emotion-Recognition/blob/f2e1968ebdf82ddccb5e42168d1fb48de44f9b1c/streamlit_app.py)
+* [Project Presentation](https://github.com/anishjohnson/Face-Emotion-Recognition/blob/f2e1968ebdf82ddccb5e42168d1fb48de44f9b1c/Project%20Presentation/Face%20Emotion%20Recognition%20Presentation.pdf)
+
 
 
 ## Project Introduction:<br>
